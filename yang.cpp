@@ -1,13 +1,13 @@
 /******************************************************************************
 -   yang.cpp
--   Prog Tools for Scits Engrs - CIVL 8903 Homework VI
+-   Prog Tools for Scits Engrs - CIVL 8903 Homework VII
 -
 -   Homework Discription:
--   Redo of homework 5
+-   Redo of homework 5 using class
 -
 -   Author: Yang Yang
 -
--   Github Repository: https://github.com/SwiftHickory/homework6.git
+-   Github Repository: https://github.com/SwiftHickory/homework7.git
 ******************************************************************************/
 
 #include "station.h"
@@ -22,7 +22,7 @@ int main() {
     const string outputFileName = "yang.out";
     ifstream inputFile;
     ofstream outputFile;
-    earthquake eq;
+    Earthquake eq;
 
     // prompt user for input file and open it
     cout << "Please Enter input file: ";
