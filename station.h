@@ -63,7 +63,7 @@ private:
 };
 
 // read table and then produce output
-void tableProcessing(ifstream &inputFile, ofstream &outputFile, earthquake eq);
+void tableProcessing(ifstream &inputFile, ofstream &outputFile, Earthquake eq);
 
 // read and processing one entry
 bool processOneEntry(ifstream &inputFile, Station &entry, int entryNumber, string networkCode);

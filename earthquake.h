@@ -43,13 +43,25 @@ public:
     string getEventID();
 
     void setDate(string new_date);
-    string getDate(;
+    string getDate();
+
+    void setTime(string new_time);
+    string getTime();
 
     void setTimeZone(string new_timeZone);
     string getTimeZone();
 
     void setEarthquakeName(string new_earthquakeName);
     string getEarthqaukeName();
+
+    void setMonth(string new_month);
+    string getMonth();
+
+    void setDay(string new_day);
+    string getDay();
+
+    void setYear(string new_year);
+    string getYear();
 
     void setEvlo(double new_evlo);
     double getEvlo();
@@ -85,9 +97,6 @@ private:
     typeOfMagnitudeType magnitudeType;
     float magnitude;
 
-    void setTime(string new_time);
-    string getTime();
-
     void setHour(string new_hour);
     string getHour();
 
@@ -100,20 +109,11 @@ private:
     void setMillisecond(string new_millisecond);
     string getMillisecond();
 
-    void setMonth(string new_month);
-    string getMonth();
-
-    void setDay(string new_day);
-    string getDay();
-
-    void setYear(string new_year);
-    string getYear();
-
     // return the numer of days in a month
     int daysOfAMonth();
 };
 
 // read header can then produce output header
-void headerProcessing(ifstream &inputFile, ofstream &outputFile, string outputFileName, Earthquake eq);
+void headerProcessing(ifstream &inputFile, ofstream &outputFile, string outputFileName, Earthquake &eq);
 
 #endif

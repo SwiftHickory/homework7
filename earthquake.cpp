@@ -1,19 +1,19 @@
 #include "earthquake.h"
 #include "global.h"
 
-void Earthquak::setEventID(string new_eventID) {
+void Earthquake::setEventID(string new_eventID) {
 
     eventID = new_eventID;
 
 }
 
-string Earthquak::getEventID() {
+string Earthquake::getEventID() {
 
     return eventID;
 
 }
 
-void Earthquak::setDate(string new_date) {
+void Earthquake::setDate(string new_date) {
 
     // the length of date must be 10
     if (new_date.length() == 10) {
@@ -39,13 +39,13 @@ void Earthquak::setDate(string new_date) {
 
 }
 
-string getDate() {
+string Earthquake::getDate() {
 
     return date;
 
 }
 
-void Earthquak::setTime(string new_time) {
+void Earthquake::setTime(string new_time) {
 
     // the length of time must be 12
     if (new_time.length() == 12) {
@@ -72,13 +72,13 @@ void Earthquak::setTime(string new_time) {
 
 }
 
-string Earthquak::getTime() {
+string Earthquake::getTime() {
 
     return time;
 
 }
 
-void Earthquak::setHour(string new_hour) {
+void Earthquake::setHour(string new_hour) {
 
     if (!is_digits(new_hour)) {
         printOutput(logFile, "Error: invalid time hour of this earthquake!\n", true);
@@ -92,13 +92,13 @@ void Earthquak::setHour(string new_hour) {
 
 }
 
-string Earthquak::getHour() {
+string Earthquake::getHour() {
 
     return intToString(hour);
 
 }
 
-void Earthquak::setMinute(string new_minute) {
+void Earthquake::setMinute(string new_minute) {
 
     if (!is_digits(new_minute)) {
         printOutput(logFile, "Error: invalid time minute of this earthquake!\n", true);
@@ -112,13 +112,13 @@ void Earthquak::setMinute(string new_minute) {
 
 }
 
-string Earthquak::getMinute() {
+string Earthquake::getMinute() {
 
     return intToString(minute);
 
 }
 
-void Earthquak::setSecond(string new_second) {
+void Earthquake::setSecond(string new_second) {
 
     if (!is_digits(new_second)) {
         printOutput(logFile, "Error: invalid time second of this earthquake!\n", true);
@@ -132,13 +132,13 @@ void Earthquak::setSecond(string new_second) {
 
 }
 
-string Earthquak::getSecond() {
+string Earthquake::getSecond() {
 
     return intToString(second);
 
 }
 
-void Earthquak::setMillisecond(string new_millisecond) {
+void Earthquake::setMillisecond(string new_millisecond) {
 
     if (!is_digits(new_millisecond)) {
         printOutput(logFile, "Error: invalid time millisecond of this earthquake!\n", true);
@@ -152,13 +152,13 @@ void Earthquak::setMillisecond(string new_millisecond) {
 
 }
 
-string Earthquak::getMillisecond() {
+string Earthquake::getMillisecond() {
 
     return intToString(millisecond);
 
 }
 
-void Earthquak::setTimeZone(string new_timeZone) {
+void Earthquake::setTimeZone(string new_timeZone) {
 
     // time zone must be three characters
     if (new_timeZone.length() != 3) {
@@ -169,24 +169,24 @@ void Earthquak::setTimeZone(string new_timeZone) {
 
 }
 
-string Earthquak::getTimeZone() {
+string Earthquake::getTimeZone() {
 
     return timeZone;
 
 }
 
-void Earthquak::setEarthquakeName(string new_earthquakeName) {
+void Earthquake::setEarthquakeName(string new_earthquakeName) {
 
-    eq.earthquakeName = new_earthquakeName;
+    earthquakeName = new_earthquakeName;
 
 }
 
-string Earthquak::getEarthqaukeName() {
+string Earthquake::getEarthqaukeName() {
 
     return earthquakeName;
 }
 
-void Earthquak::setMonth(string new_month) {
+void Earthquake::setMonth(string new_month) {
 
     if (new_month == "01") {
         month = January;
@@ -252,7 +252,7 @@ void Earthquak::setMonth(string new_month) {
 
 }
 
-string Earthquak::getMonth() {
+string Earthquake::getMonth() {
 
     switch (month) {
         case January:
@@ -295,7 +295,7 @@ string Earthquak::getMonth() {
 
 }
 
-void Earthquak::setDay(string new_day) {
+void Earthquake::setDay(string new_day) {
 
     // day should be numbers 
     if (!is_digits(new_day)) {
@@ -309,19 +309,19 @@ void Earthquak::setDay(string new_day) {
 
 }
 
-string Earthquak::getDay() {
+string Earthquake::getDay() {
 
     string day_str = intToString(day);
 
     if (day_str.length() == 1) {
-        day_str = "0" + day;
+        day_str = "0" + day_str;
     }
 
     return day_str;
 
 }
 
-void Earthquak::setYear(string new_year) {
+void Earthquake::setYear(string new_year) {
 
     // year should be numbers 
     if (!is_digits(new_year)) {
@@ -332,49 +332,49 @@ void Earthquak::setYear(string new_year) {
 
 }
 
-string Earthquak::getYear() {
+string Earthquake::getYear() {
 
     return intToString(year);
 
 }
 
-void Earthquak::setEvlo(double new_evlo) {
+void Earthquake::setEvlo(double new_evlo) {
 
     evlo = new_evlo;
 
 }
 
-double Earthquak::getEvlo() {
+double Earthquake::getEvlo() {
 
     return evlo;
 
 }
 
-void Earthquak::setEvla(double new_evla) {
+void Earthquake::setEvla(double new_evla) {
 
     evla = new_evla;
 
 }
 
-double Earthquak::getEvla() {
+double Earthquake::getEvla() {
 
     return evla;
 
 }
 
-void Earthquak::setEvdp(double new_evdp) {
+void Earthquake::setEvdp(double new_evdp) {
 
     evdp = new_evdp;
 
 }
 
-double Earthquak::getEvdp() {
+double Earthquake::getEvdp() {
 
     return evdp;
 
 }
 
-void Earthquak::setMagnitudeType(string new_magnitudeType) {
+void Earthquake::setMagnitudeType(string new_magnitudeType) {
 
     // case insensitive so convert it to lower case first
     new_magnitudeType = lowerString(new_magnitudeType);
@@ -403,7 +403,7 @@ void Earthquak::setMagnitudeType(string new_magnitudeType) {
 
 }
 
-string Earthquak::getMagnitudeType() {
+string Earthquake::getMagnitudeType() {
 
     switch (magnitudeType) {
         case ml:
@@ -422,7 +422,7 @@ string Earthquak::getMagnitudeType() {
 
 }
 
-void Earthquak::setMagnitude(float new_magnitude) {
+void Earthquake::setMagnitude(float new_magnitude) {
 
     // magnitude must be a positive number
     if (new_magnitude <= 0) {
@@ -433,14 +433,14 @@ void Earthquak::setMagnitude(float new_magnitude) {
 
 }
 
-float Earthquak::getMagnitude() {
+float Earthquake::getMagnitude() {
 
     return magnitude;
 
 }
 
 // return the numer of days in a month
-int Earthquak::daysOfAMonth() {
+int Earthquake::daysOfAMonth() {
 
     switch (month) {
         case January:
@@ -484,7 +484,7 @@ int Earthquak::daysOfAMonth() {
 }
 
 // read header from input file
-void headerProcessing(ifstream &inputFile, ofstream &outputFile, string outputFileName, Earthquake eq) {
+void headerProcessing(ifstream &inputFile, ofstream &outputFile, string outputFileName, Earthquake &eq) {
 
     string eventID, date, time, timeZone, earthquakeName;
     double evlo, evla, evdp;
